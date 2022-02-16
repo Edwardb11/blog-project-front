@@ -6,7 +6,7 @@ import { Article } from "./pages/Article";
 import { ArticleList } from "./pages/ArticleList";
 import { About } from "./pages/About";
 import { NavBar } from "./components/NavBar";
-import NotFound from "./pages/NoFound";
+import { NotFound } from "./pages/NoFound";
 
 export default function App() {
   return (

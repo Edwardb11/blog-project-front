@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NotFound = () => {
+export  const NotFound = () => {
   return (
     <div className="px-40 py-20  bg-white rounded-md shadow-xl">
       <div className="flex flex-col items-center">
-        <div>
-          <img src="https://i.ibb.co/G9DC8S0/404-2.png" />
-        </div>
+        <h1 className="font-bold text-red-500 text-9xl">
+          404
+        </h1>
         <h6 className="mb-2 text-2xl font-bold text-center text-gray-800 md:text-3xl">
           <span className="text-red-500">Oops!</span> Page not found
         </h6>
@@ -22,10 +22,8 @@ const NotFound = () => {
         >
           Go home
         </Link>
+        
       </div>
-      
     </div>
   );
 };
-
-export default NotFound;
