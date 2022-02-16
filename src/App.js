@@ -16,7 +16,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/About" element={<About />}></Route>
-          <Route path="/Article" element={<Article />}></Route>
+          <Route path="/Article/:name" element={<Article />}></Route>
           <Route path="/ArticleList" element={<ArticleList />}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
