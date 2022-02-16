@@ -5,9 +5,12 @@ import Home from "./pages/Home";
 import { Article } from "./pages/Article";
 import { ArticleList } from "./pages/ArticleList";
 import { About } from "./pages/About";
+import { NavBar } from './components/NavBar';
+
 export default function App() {
   return (
     <Router>
+      <NavBar/>
       <div className="max-w-screen-md mx-auto pt-20">
         <Routes>
           <Route path="/" element={<Home />}></Route>{" "}
