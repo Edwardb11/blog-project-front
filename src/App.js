@@ -1,13 +1,20 @@
 import React from "react";
-import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+//components
+import Home from "./pages/Home";
+import { Article } from "./pages/Article";
+import { ArticleList } from "./pages/ArticleList";
+import { About } from "./pages/About";
 export default function App() {
   return (
     <Router>
       <div className="max-w-screen-md mx-auto pt-20">
         <Routes>
           <Route path="/" element={<Home />}></Route>{" "}
-        </Routes>{" "}
+          <Route path="/About" element={<About />}></Route>{" "}
+          <Route path="/Article" element={<Article />}></Route>{" "}
+          <Route path="/ArticleList" element={<ArticleList />}></Route>{" "}
+        </Routes>
       </div>{" "}
     </Router>
   );
