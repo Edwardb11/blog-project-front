@@ -1,17 +1,20 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import articles from "./article-content";
+import articlesContent from "./article-content";
+import { Articles } from "./../components/Articles";
 
 export const Article = ({ match }) => {
   const { name } = useParams();
-  console.log(name);
-  const article = articles.find((article) => article.name === name);
+  const article = articlesContent.find((article) => article.name === name);
   if (!article)
     return (
       <h1 className="sm:text-4xl text-2xl font-bold mt-6 text-gray-900">
         Article does not exists
       </h1>
     );
+  const OtherArticles = articlesContent.filter(
+    (article) => article.name !== name
+  );
   return (
     <>
       <h1 className="sm:text-4xl text-2xl font-bold mt-6 text-gray-900">
@@ -23,6 +26,14 @@ export const Article = ({ match }) => {
           {paragraph}
         </p>
       ))}
+      {/* add other article when open one article */}
+      <h1 className="sm:text-2xl text-xl font-bold mt-4 mb-4 text-gray-900 ">
+        {" "}
+        Other Articles
+      </h1>
+      <div className="flex flex-wrap -m-4">
+        <Articles articles={OtherArticles}></Articles>
+      </div>
     </>
   );
 };
