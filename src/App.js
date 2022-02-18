@@ -11,15 +11,17 @@ import { NotFound } from "./pages/NoFound";
 export default function App() {
   return (
     <Router>
-      <NavBar />
-      <div className="max-w-screen-md mx-auto pt-20">
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/About" element={<About />}></Route>
-          <Route path="/Article/:name" element={<Article />}></Route>
-          <Route path="/ArticleList" element={<ArticleList />}></Route>
-          <Route path="*" element={<NotFound />}></Route>
-        </Routes>
+      <div className="min-h-screen bg-sky-50">
+        <NavBar />
+        <div className="max-w-screen-md mx-auto pt-20 ">
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/About" element={<About />}></Route>
+            <Route path="/Article/:name" element={<Article />}></Route>
+            <Route path="/ArticleList" element={<ArticleList />}></Route>
+            <Route path="*" element={<NotFound />}></Route>
+          </Routes>
+        </div>
       </div>
     </Router>
   );

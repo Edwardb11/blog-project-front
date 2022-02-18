@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import articlesContent from "./article-content";
 import { Articles } from "./../components/Articles";
+import CommentsList from "../components/CommentsList";
+import AddCommentForm from "../components/AddCommentForm";
 
 export const Article = ({ match }) => {
   const { name } = useParams();
   const article = articlesContent.find((article) => article.name === name);
+
+  const [articleInfo, setArticleInfo] = useState({ comments: [] });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await fetch(`/api/articles/${name}`);
+      const body = await result.json();
+      // console.log(body);
+      setArticleInfo(body);
+    };
+    fetchData();
+  }, [name]);
+
   if (!article)
     return (
       <h1 className="sm:text-4xl text-2xl font-bold mt-6 text-gray-900">
@@ -17,7 +32,7 @@ export const Article = ({ match }) => {
   );
   return (
     <>
-      <h1 className="sm:text-4xl text-2xl font-bold mt-6 text-gray-900">
+      <h1 className="sm:text-4xl text-2xl font-bold mt-12 mb-3 text-gray-900">
         {article.title}
       </h1>
       {article.content.map((paragraph, index) => (
@@ -26,6 +41,9 @@ export const Article = ({ match }) => {
           {paragraph}
         </p>
       ))}
+      <CommentsList comments={articleInfo.comments} />
+      <AddCommentForm articleName={name} articleInfo={setArticleInfo} />
+
       {/* add other article when open one article */}
       <h1 className="sm:text-2xl text-xl font-bold mt-4 mb-4 text-gray-900 ">
         {" "}
