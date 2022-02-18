@@ -11,8 +11,9 @@ import { NotFound } from "./pages/NoFound";
 export default function App() {
   return (
     <Router>
+      <div className="h-screen bg-sky-50  bg-cover  ">
       <NavBar />
-      <div className="max-w-screen-md mx-auto pt-20">
+      <div className="max-w-screen-md mx-auto pt-20 ">
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/About" element={<About />}></Route>
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </div>
+        </div> 
     </Router>
   );
 }
