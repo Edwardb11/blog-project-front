@@ -21,10 +21,7 @@ export const NavBar = () => {
           </Link>
         </li>
         <li className="inline-block h-5  hover:text-gray-900  cursor-pointer">
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/edward-brito-diaz-b60909179/"
-          >
+          <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/edward-brito-diaz-b60909179/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="56"
@@ -38,7 +35,7 @@ export const NavBar = () => {
           </a>
         </li>
         <li className="inline-block h-5  hover:text-gray-900  cursor-pointer">
-          <a target="_blank" href="https://github.com/Edwardb11">
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/Edwardb11">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="56"

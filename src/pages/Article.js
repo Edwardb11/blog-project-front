@@ -42,7 +42,7 @@ export const Article = ({ match }) => {
         </p>
       ))}
       <CommentsList comments={articleInfo.comments} />
-      <AddCommentForm articleName={name} articleInfo={setArticleInfo}/>
+      <AddCommentForm articleName={name} articleInfo={setArticleInfo} />
 
       {/* add other article when open one article */}
       <h1 className="sm:text-2xl text-xl font-bold mt-4 mb-4 text-gray-900 ">
