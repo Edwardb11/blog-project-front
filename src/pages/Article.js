@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import articlesContent from "./article-content";
 import { Articles } from "./../components/Articles";
 import CommentsList from "../components/CommentsList";
+import AddCommentForm from "../components/AddCommentForm";
 
 export const Article = ({ match }) => {
   const { name } = useParams();
@@ -14,7 +15,7 @@ export const Article = ({ match }) => {
     const fetchData = async () => {
       const result = await fetch(`/api/articles/${name}`);
       const body = await result.json();
-      console.log(body);
+      // console.log(body);
       setArticleInfo(body);
     };
     fetchData();
@@ -41,6 +42,7 @@ export const Article = ({ match }) => {
         </p>
       ))}
       <CommentsList comments={articleInfo.comments} />
+      <AddCommentForm articleName={name} articleInfo={setArticleInfo}/>
 
       {/* add other article when open one article */}
       <h1 className="sm:text-2xl text-xl font-bold mt-4 mb-4 text-gray-900 ">
